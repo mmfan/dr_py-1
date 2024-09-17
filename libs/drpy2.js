@@ -1,6 +1,7 @@
 import cheerio from 'assets://js/lib/cheerio.min.js';
 import 'assets://js/lib/crypto-js.js';
-import 模板 from"../js/模板.js"
+import './jsencrypt.js';
+import 模板 from "../js/模板.js"
 import {gbkTool} from './gbk.js'
 
 // import cheerio from "https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/cheerio.min.js";
@@ -17,6 +18,36 @@ function init_test(){
     console.log(RKEY);
     console.log(JSON.stringify(rule));
     console.log("init_test_end");
+
+
+    // log('typeof (JSEncrypt):'+typeof (JSEncrypt));
+    // let publicKey = 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwEc7wBMtYKkxvrQNI3+ITBZwAkPkGvsv4TsAHFskKGZWz9eYl3scivhmlEfWHlEkdyb0m82CmB1qAgef+pD4cZu+Cdmm2e9lnExhLwm8cBgpkAen9QRNdjojZgxM0W+JcReH4W6pw+uFXiLRn4AIQkDftWGNLg6wlNS+39Z/RvP9zyATJLZ9AKDdHp62XMxEK1KZvWBuIg+Oa5UzgA9jy+2XyIqwhBtO8tPbUl21t2pvTzHoLUjSkPNm2LurcUk6+jQ2r6aiS2CN1NXIucPJU6mkuIQ821SjvkYPtIdRMntW4y2u4cyiqVEEQwlzWVMHh+/vfrWAQr9fgjDuYYtvPQIDAQAB';
+    // let privateKey  = 'MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDARzvAEy1gqTG+tA0jf4hMFnACQ+Qa+y/hOwAcWyQoZlbP15iXexyK+GaUR9YeUSR3JvSbzYKYHWoCB5/6kPhxm74J2abZ72WcTGEvCbxwGCmQB6f1BE12OiNmDEzRb4lxF4fhbqnD64VeItGfgAhCQN+1YY0uDrCU1L7f1n9G8/3PIBMktn0AoN0enrZczEQrUpm9YG4iD45rlTOAD2PL7ZfIirCEG07y09tSXbW3am9PMegtSNKQ82bYu6txSTr6NDavpqJLYI3U1ci5w8lTqaS4hDzbVKO+Rg+0h1Eye1bjLa7hzKKpUQRDCXNZUweH7+9+tYBCv1+CMO5hi289AgMBAAECggEBAIRbRJUWXmEwdq64kGbELlV6CIZ2p3mvOSlIjO34Cy7IK7AMz9xOgbpj/XDK9miOIJTouu7ZC7GcZdGZ4BUCYBMMS0fKjGFuurpZlXhkslNTPqEHtCUkXhIpOR7RDrwIlErGEOIsZC4aXQcM3tF1t7mroJLh4OY4dHMu82lv5NM4hhFMNvHzXVvrPXeTzw26gddHVG/ke0WUYOcB5j3cPp8xaVp7JV8bdxtGtkqIfBLY/dIczzJu/3F3cBpU2nNwt8uVUF/w/HKlr7j8FqqFHXWh182beU0n5AIdRyRJBrRUAEhdtsUnvJOVBDqzZa+9DJ5395F7V8KRlQptxETdhCECgYEA4x/2HM9fnVIhG6wTbEt1LhGTKYb/igMAHLqquEMfRsB44tobI8gVNwR3qJQY/nKXxcQemQV29PcdqpENCKyXUXGD8SI1UPg15rHFBI8CIqlCXfzJybdHjmzlhaA9I5lofIVh+5MW7WkvHZoRy7NeDMhHUuaiveuqC4OJ8n+dD2kCgYEA2LkmUVef3WkBBwUBRdkyoog3DMwR+/ubb0ncJVYy3ItYVJltQ4HqmrRiJc8xBAoFnG8rbiqDnmTnDR3WbuxU1G2hml09fqId+rQds2UfESswCXHU43A4f77m1XyA6PprBxpozVIcmK69N4rR9jOXflLWo3O+p2ipUbmNpId7+rUCgYBSpcbBJRT+AmzZzPwkZDD32p1ady114zGfQq3s7z/qVw+mPQezNZPCuXVxerK9pKVl6b/Ynwxyh5nb/3xms6c8k7oXfQM5u5ihof63cfKs+jqUSPCE3pTDVw0OWwjkc2Z6KW9GRHgLXEMw2mevYE3RCPArUpHV2nO+TNddzuIwQQKBgQDOZwdnUNygMfEYjlu3+jOPN8u2FGTMZ8SRKPbRWFb4VH27lKPLN2AIFuOivsEf56uQYRAry7GumMq0Y0ZmPg5Mglz2dvaqNBv5OLFQuW3tHAST+iWWtroYb+fISts7B8QG79AAO8OgZksvKrbslBYj6SEiaomZRsR7YQzVNXOOQQKBgQCovElZ50c8ZJ6m9D9fw3Nes7u9vshpyyac5tt4tZ7yfU4l5pWGrIUqCE703qZp4NAqEvlZUCJbj9kkysaj/2MfFb2b9jSvdNB+V/YW9Cwg+5TziYoOcQzN1z2u4p4goTAv0S+pTNSr3qWaTUI4TXUXQajif45Fexv+MrP5AAXQyw=='
+    // // let text = '你好';
+    // let text = '[{"vod_name":"兔小贝原创儿歌","vod_pic":"https://resource-cdn.tuxiaobei.com/video-album/FnQ8ieJHgsbgCKWXNBg4uoOmKgG5.jpg","vod_remarks":"共229首","vod_content":"","vod_id":"/subject/17@@兔小贝原创儿歌@@https://resource-cdn.tuxiaobei.com/video-album/FnQ8ieJHgsbgCKWXNBg4uoOmKgG5.jpg"},{"vod_name":"英文儿歌","vod_pic":"https://resource-cdn.tuxiaobei.com/video-album/Fqjpx2H_-QaYNAYn2MekRuDpeyUv.jpg","vod_remarks":"共10首","vod_content":"","vod_id":"/subject/23@@英文儿歌@@https://resource-cdn.tuxiaobei.com/video-album/Fqjpx2H_-QaYNAYn2MekRuDpeyUv.jpg"}]';
+    // let str = RSA.encode(text, publicKey);
+    // console.log("加密数据：" + str);
+    // let str1 = 'Wa2c/868VOm0PgpGG2s2aMrDbGOlJRdZXlSGswjFgywd3nZNB7ND8kVMdNB/OsNFoQXJXSJMvPaE73BH7rs8fz54JGdYQK+qTgfQRqQZvomCjbzseSR4bm4NOrtIOOslL3WqxlzOuU0M1P1eERmkLEVU2WSyc3RGtJro3b3MOWYCNdKMoZdncfOHJndkl4wm9V3GGc3uH98hs6OxLvBWgXoW9jZQ3n0vR2FtS2KYrPGuSuKGkxlt9Kw5TD6nri142NOimz05WK55Xe04YUQ1VZd51t0wzJGXolWgfzIQaK2zzhk5Zjlm+IQJxXqEWiJ2+O6TJ+lIttvsDSaUflcDXQ==';
+    // let str2 = 'R86mW9DzBw05pxBSh9ECh1stXxINmnudgZBbzU/cz1EcFgrEgdk0Zk4ruAiJZB2fP5c7d3gMmN8+Dv19IfARWSzw85xCEjUhpdcMJ0jn6ZE5H+muadND9LzjeVisojqwYxot3YVdKof7HMhPFN8QR0jfzqhjmnGFTlY1jMXzJK0MSOLNRLDar480CdKNb/cxALC8+xKIlhM9E4B31t8J4rNMUWSCAr49lbZ3jx3PxieBpTQUdDJz96AttR93Pc+c51wrxh0Ch/Mt4Rs09HGMXwIpNV+CxsGwSGRQUlyJo2k3d0WqsVzpz6S8A4VGEMTRLGI3IjEt+eWt7wM3nAXarg==';
+    // let str3 = 'D4eOsRqua+jYA5+ZOR9PLI2PExKjKfArQfv9/wGeG50bQSjWypShJPY6RQfO+rghyf0juzHIUSxqH91OxinhCFkONaF2Vod2QVyphyn9eh73dAcEFKIFFKGXoPCjbMWrr3p4d+hgVrHzrFeGqkRq8JFOvG2L5XDxVfWbV8KmUA0DKuz6QwWg7P4kesy+C7BbLALy5W/wfZchD3gnsBvx/pjFoe11VfAify9isLxg9a15jj52xr6lzQ9kge9C2JcV8yq85bFKaUpJWgobzz+BSIv3lVMU6vgcldmOrhkyiETpFGFGGF00DphGCEoK6uAyyNDh7+Jn8P17zf/DW1wV3A==';
+    // let uncrypted = RSA.decode(str, privateKey);
+    // log('解密数据:'+uncrypted);
+    // uncrypted = RSA.decode(str1, privateKey);
+    // log('解密数据1:'+uncrypted);
+    // uncrypted = RSA.decode(str2, privateKey);
+    // log('解密数据2:'+uncrypted);
+    // uncrypted = RSA.decode(str3, privateKey);
+    // log('解密数据3:'+uncrypted);
+
+    // log('rsax:'+typeof(rsax));
+    // log('rsaX:'+typeof(rsaX));
+    // let data = base64Encode('你好');
+    // let publicKey = 'dzyyds';
+    // console.log(typeof (RSA.encode));
+    // let encryptBase64Data = RSA.encode(data,publicKey);
+    // log('encryptBase64Data:'+encryptBase64Data);
+    // let str = RSA.decode(data,publicKey);
+    // log('str:'+str);
 }
 
 /**
@@ -41,14 +72,14 @@ function pre(){
 
 let rule = {};
 let vercode = typeof(pdfl) ==='function'?'drpy2.1':'drpy2';
-const VERSION = vercode+' 3.9.41beta1 20230328';
+const VERSION = vercode+' 3.9.49beta40 202400426';
 /** 已知问题记录
  * 1.影魔的jinjia2引擎不支持 {{fl}}对象直接渲染 (有能力解决的话尽量解决下，支持对象直接渲染字符串转义,如果加了|safe就不转义)[影魔牛逼，最新的文件发现这问题已经解决了]
  * Array.prototype.append = Array.prototype.push; 这种js执行后有毛病,for in 循环列表会把属性给打印出来 (这个大毛病需要重点排除一下)
  * 2.import es6py.js但是里面的函数没有被装载进来.比如drpy规则报错setResult2 is undefiend(合并文件了可以不管了)
  * 3.无法重复导入cheerio(怎么解决drpy和parseTag里都需要导入cheerio的问题) 无法在副文件导入cheerio (现在是全部放在drpy一个文件里了,凑合解决?)
  * 4.有个错误不知道哪儿来的 executeScript: com.quickjs.JSObject$Undefined cannot be cast to java.lang.String 在 点击选集播放打印init_test_end后面打印(貌似不影响使用)
- * 5.需要实现 stringify 函数,比起JSON.stringify函数,它会原封不动保留中文不会编码unicode
+ * 5.需要实现 stringify 函数,比起JSON.strifngify函数,它会原封不动保留中文不会编码unicode
  * 6.base64Encode,base64Decode,md5函数还没有实现 (抄影魔代码实现了)
  * 7.eval(getCryptoJS());还没有实现 (可以空实现了,以后遇到能忽略)
  * done:  jsp:{pdfa,pdfh,pd},json:{pdfa,pdfh,pd},jq:{pdfa,pdfh,pd}
@@ -74,7 +105,7 @@ const IOS_UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWe
 const RULE_CK = 'cookie'; // 源cookie的key值
 // const KEY = typeof(key)!=='undefined'&&key?key:'drpy_' + (rule.title || rule.host); // 源的唯一标识
 const CATE_EXCLUDE = '首页|留言|APP|下载|资讯|新闻|动态';
-const TAB_EXCLUDE = '猜你|喜欢|APP|下载|剧情|热播';
+const TAB_EXCLUDE = '猜你|喜欢|下载|剧情|热播';
 const OCR_RETRY = 3;//ocr验证重试次数
 // const OCR_API = 'http://dm.mudery.com:10000';//ocr在线识别接口
 // const OCR_API = 'http://192.168.3.239:5705/parse/ocr';//ocr在线识别接口
@@ -84,6 +115,7 @@ const OCR_API = 'http://drpy.nokia.press:8028/ocr/drpy/text';//ocr在线识别�
 if(typeof(MY_URL)==='undefined'){
     var MY_URL; // 全局注入变量,pd函数需要
 }
+var HOST;
 var RKEY; // 源的唯一标识
 var fetch;
 var print;
@@ -96,9 +128,11 @@ var _pdfh;
 var _pdfa;
 var _pd;
 // const DOM_CHECK_ATTR = ['url', 'src', 'href', 'data-original', 'data-src'];
-const DOM_CHECK_ATTR = /(url|src|href|-original|-src|-play|-url)$/;
+const DOM_CHECK_ATTR = /(url|src|href|-original|-src|-play|-url|style)$/;
+// 过滤特殊链接,不走urlJoin
+const SPECIAL_URL = /^(ftp|magnet|thunder|ws):/;
 const NOADD_INDEX = /:eq|:lt|:gt|:first|:last|^body$|^#/;  // 不自动加eq下标索引
-const URLJOIN_ATTR = /(url|src|href|-original|-src|-play|-url)$/;  // 需要自动urljoin的属性
+const URLJOIN_ATTR = /(url|src|href|-original|-src|-play|-url|style)$/;  // 需要自动urljoin的属性
 const SELECT_REGEX = /:eq|:lt|:gt|#/g;
 const SELECT_REGEX_A = /:eq|:lt|:gt/g;
 
@@ -107,10 +141,10 @@ const SELECT_REGEX_A = /:eq|:lt|:gt/g;
  */
 if (typeof Object.assign != 'function') {
     Object.assign = function () {
-        var target = arguments[0];
-        for (var i = 1; i < arguments.length; i++) {
-            var source = arguments[i];
-            for (var key in source) {
+        let target = arguments[0];
+        for (let i = 1; i < arguments.length; i++) {
+            let source = arguments[i];
+            for (let key in source) {
                 if (Object.prototype.hasOwnProperty.call(source, key)) {
                     target[key] = source[key];
                 }
@@ -213,6 +247,14 @@ if (typeof Array.prototype.join != 'function') {
             str += String(emoji)+String(self[i]);
         }
         return str;
+    };
+}
+if (typeof Array.prototype.toReversed != 'function') {
+    Array.prototype.toReversed = function () {
+        const clonedList = this.slice();
+        // 倒序新数组
+        const reversedList = clonedList.reverse();
+        return reversedList;
     };
 }
 
@@ -420,6 +462,226 @@ function getCryptoJS(){
     return 'console.log("CryptoJS已装载");'
 }
 
+// 封装的RSA加解密类
+const RSA = {
+    decode: function (data, key, option) {
+        option = option || {};
+        if (typeof (JSEncrypt) === 'function') {
+            let chunkSize = option.chunkSize || 117; // 默认分段长度为117
+            let privateKey = this.getPrivateKey(key); // 获取私钥
+            const decryptor = new JSEncrypt(); //创建解密对象实例
+            decryptor.setPrivateKey(privateKey); //设置秘钥
+            let uncrypted = '';
+            // uncrypted = decryptor.decrypt(data);
+            uncrypted = decryptor.decryptUnicodeLong(data);
+            return uncrypted;
+        } else {
+            return false
+        }
+    },
+    encode: function (data, key, option) {
+        option = option || {};
+        if (typeof (JSEncrypt) === 'function') {
+            let chunkSize = option.chunkSize || 117; // 默认分段长度为117
+            let publicKey = this.getPublicKey(key); // 获取公钥
+            const encryptor = new JSEncrypt();
+            encryptor.setPublicKey(publicKey); // 设置公钥
+            let encrypted = ''; // 加密结果
+            // const textLen = data.length; // 待加密文本长度
+            // let offset = 0; // 分段偏移量
+            // // 分段加密
+            // while (offset < textLen) {
+            //     let chunk = data.slice(offset, chunkSize); // 提取分段数据
+            //     let enc = encryptor.encrypt(chunk); // 加密分段数据
+            //     encrypted += enc; // 连接加密结果
+            //     offset += chunkSize; // 更新偏移量
+            // }
+            encrypted = encryptor.encryptUnicodeLong(data);
+            return encrypted
+        } else {
+            return false
+        }
+    },
+    fixKey(key, prefix, endfix) {
+        if (!key.includes(prefix)) {
+            key = prefix + key;
+        }
+        if (!key.includes(endfix)) {
+            key += endfix
+        }
+        return key
+    },
+    getPrivateKey(key) {
+        let prefix = '-----BEGIN RSA PRIVATE KEY-----';
+        let endfix = '-----END RSA PRIVATE KEY-----';
+        return this.fixKey(key, prefix, endfix);
+    },
+    getPublicKey(key) {
+        let prefix = '-----BEGIN PUBLIC KEY-----';
+        let endfix = '-----END PUBLIC KEY-----';
+        return this.fixKey(key, prefix, endfix);
+    }
+};
+
+/**
+ * 获取壳子返回的代理地址
+ * @returns {string|*}
+ */
+function getProxyUrl(){
+    if(typeof(getProxy)==='function'){//判断壳子里有getProxy函数就执行取返回结果。否则取默认的本地
+        return getProxy(true)
+    }else{
+        return 'http://127.0.0.1:9978/proxy?do=js'
+    }
+}
+
+/**
+ * 根据正则处理原始m3u8里的广告ts片段，自动修复相对链接
+ * @param m3u8_text m3u8原始文本，里面是最末级的只含ts片段的。不支持嵌套m3u8链接
+ * @param m3u8_url m3u8原始地址
+ * @param ad_remove 正则表达式如: reg:/video/adjump(.*?)ts
+ * @returns {string|DocumentFragment|*|string}
+ */
+function fixAdM3u8(m3u8_text, m3u8_url, ad_remove) {
+    if ((!m3u8_text && !m3u8_url) || (!m3u8_text && m3u8_url && !m3u8_url.startsWith('http'))) {
+        return ''
+    }
+    if (!m3u8_text) {
+        log('m3u8_url:' + m3u8_url);
+        m3u8_text = request(m3u8_url);
+    }
+    log('len(m3u8_text):' + m3u8_text.length);
+    if (!ad_remove) {
+        return m3u8_text
+    }
+    if (ad_remove.startsWith('reg:')) {
+        ad_remove = ad_remove.slice(4)
+    } else if (ad_remove.startsWith('js:')) {
+        ad_remove = ad_remove.slice(3)
+    }
+    let m3u8_start = m3u8_text.slice(0, m3u8_text.indexOf('#EXTINF')).trim();
+    let m3u8_body = m3u8_text.slice(m3u8_text.indexOf('#EXTINF'), m3u8_text.indexOf('#EXT-X-ENDLIST')).trim();
+    let m3u8_end = m3u8_text.slice(m3u8_text.indexOf('#EXT-X-ENDLIST')).trim();
+    let murls = [];
+    let m3_body_list = m3u8_body.split('\n');
+    let m3_len = m3_body_list.length;
+    let i = 0;
+    while (i < m3_len) {
+        let mi = m3_body_list[i];
+        let mi_1 = m3_body_list[i + 1];
+        if (mi.startsWith('#EXTINF')) {
+            murls.push([mi, mi_1].join('&'));
+            i += 2
+        } else if (mi.startsWith('#EXT-X-DISCONTINUITY')) {
+            let mi_2 = m3_body_list[i + 2];
+            murls.push([mi, mi_1, mi_2].join('&'));
+            i += 3
+        } else {
+            break;
+        }
+    }
+    let new_m3u8_body = [];
+    for (let murl of murls) {
+        if (ad_remove && new RegExp(ad_remove).test(murl)) {
+
+        } else {
+            let murl_list = murl.split('&');
+            if (!murl_list[murl_list.length - 1].startsWith('http') && m3u8_url.startsWith('http')) {
+                murl_list[murl_list.length - 1] = urljoin(m3u8_url, murl_list[murl_list.length - 1]);
+            }
+            murl_list.forEach((it) => {
+                new_m3u8_body.push(it);
+            });
+        }
+
+    }
+    new_m3u8_body = new_m3u8_body.join('\n').trim();
+    m3u8_text = [m3u8_start, new_m3u8_body, m3u8_end].join('\n').trim();
+    return m3u8_text
+}
+
+/**
+ *  智能对比去除广告。支持嵌套m3u8。只需要传入播放地址
+ * @param m3u8_url m3u8播放地址
+ * @returns {string}
+ */
+function fixAdM3u8Ai(m3u8_url) {
+    let ts = new Date().getTime();
+
+    function b(s1, s2) {
+        let i = 0;
+        while (i < s1.length) {
+            if (s1[i] !== s2[i]) {
+                break
+            }
+            i++
+        }
+        return i;
+    }
+
+    function reverseString(str) {
+        return str.split('').reverse().join('');
+    }
+
+    //log('播放的地址：' + m3u8_url);
+    let m3u8 = request(m3u8_url);
+    //log('m3u8处理前:' + m3u8);
+    m3u8 = m3u8.trim().split('\n').map(it => it.startsWith('#') ? it : urljoin(m3u8_url, it)).join('\n');
+    //log('m3u8处理后:============:' + m3u8);
+    // 获取嵌套m3u8地址
+    let last_url = m3u8.split('\n').slice(-1)[0];
+    if (last_url.includes('.m3u8') && last_url !== m3u8_url) {
+        m3u8_url = last_url;
+        //log('嵌套的m3u8_url:' + m3u8_url);
+        m3u8 = request(m3u8_url);
+    }
+    //log('----处理有广告的地址----');
+    let s = m3u8.trim().split('\n').filter(it => it.trim()).join('\n');
+    let ss = s.split('\n')
+    //找出第一条播放地址
+    let firststr = ss.find(x => !x.startsWith('#'));
+    let maxl = 0;//最大相同字符
+    let firststrlen = firststr.length;
+    //log('字符串长度：' + firststrlen);
+    let ml = Math.round(ss.length / 2).toString().length;//取数据的长度的位数
+    //log('数据条数的长度：' + ml);
+    //找出最后一条播放地址
+    let laststr = ss.toReversed().find((x) => {
+        if (!x.startsWith('#')) {
+            let k = b(reverseString(firststr), reverseString(x));
+            maxl = b(firststr, x);
+            if (firststrlen - maxl <= ml + k) {
+                return true
+            }
+        }
+        return false
+    });
+    log('最后一条切片：' + laststr);
+    //log('最小相同字符长度：' + maxl);
+    let ad_urls = [];
+    for (let i = 0; i < ss.length; i++) {
+        let s = ss[i];
+        if (!s.startsWith('#')) {
+            if (b(firststr, s) < maxl) {
+                ad_urls.push(s); // 广告地址加入列表
+                ss.splice(i - 1, 2);
+                i = i - 2;
+            } else {
+                ss[i] = urljoin(m3u8_url, s);
+            }
+        } else {
+            ss[i] = s.replace(/URI=\"(.*)\"/, 'URI=\"' + urljoin(m3u8_url, '$1') + '\"');
+        }
+    }
+    log('处理的m3u8地址:' + m3u8_url);
+    log('----广告地址----');
+    log(ad_urls);
+    m3u8 = ss.join('\n');
+    //log('处理完成');
+    log('处理耗时：' + (new Date().getTime() - ts).toString());
+    return m3u8
+}
+
 /**
  * 强制正序算法
  * @param lists  待正序列表
@@ -531,6 +793,8 @@ function pdfh2(html,parse){
     if(/style/.test(option.toLowerCase())&&/url\(/.test(result)){
         try {
             result =  result.match(/url\((.*?)\)/)[1];
+            // 2023/07/28新增 style取内部链接自动去除首尾单双引号
+            result = result.replace(/^['|"](.*)['|"]$/, "$1");
         }catch (e) {}
     }
     return result
@@ -566,9 +830,9 @@ function pd2(html,parse,uri){
     if(typeof(uri)==='undefined'||!uri){
         uri = '';
     }
-    if(DOM_CHECK_ATTR.test(parse)){
+    if(DOM_CHECK_ATTR.test(parse) && !SPECIAL_URL.test(ret)){
         if(/http/.test(ret)){
-            ret = ret.substr(ret.indexOf('http'));
+            ret = ret.slice(ret.indexOf('http'));
         }else{
             ret = urljoin(MY_URL,ret)
         }
@@ -938,6 +1202,9 @@ function request(url,obj,ocr_flag){
         obj.buffer = 2;
         delete obj.toBase64
     }
+    if(obj.redirect===false){
+        obj.redirect = 0;
+    }
     console.log(JSON.stringify(obj.headers));
     // console.log('request:'+url+' obj:'+JSON.stringify(obj));
     console.log('request:'+url+`|method:${obj.method||'GET'}|body:${obj.body||''}`);
@@ -1064,47 +1331,77 @@ function homeParse(homeObj) {
     }
 
     if (homeObj.class_parse) {
-        let p = homeObj.class_parse.split(';');
-        let _ps = parseTags.getParse(p[0]);
-        _pdfa = _ps.pdfa;
-        _pdfh = _ps.pdfh;
-        _pd = _ps.pd;
-        MY_URL = rule.url;
-        if (p.length >= 3) { // 可以不写正则
-            try {
-                let html = getHtml(homeObj.MY_URL);
-                if (html) {
-                    homeHtmlCache = html;
-                    let list = _pdfa(html, p[0]);
-                    if (list && list.length > 0) {
-                        list.forEach((it,idex) => {
-                            try {
-                                let name = _pdfh(it, p[1]);
-                                if (homeObj.cate_exclude && (new RegExp(homeObj.cate_exclude).test(name))) {
-                                    return;
-                                }
-                                // let url = pdfh(it, p[2]);
-                                let url = _pd(it, p[2]);
-                                if (p.length > 3 && p[3]) {
-                                    let exp = new RegExp(p[3]);
-                                    url = url.match(exp)[1];
-                                }
+         if(homeObj.class_parse.startsWith('js:')) {
+             var input = homeObj.MY_URL;
+             try {
+                 eval(homeObj.class_parse.replace('js:', ''));
+                 if (Array.isArray(input)) {
+                     classes = input;
+                 }
+             }catch(e){
+                 log('通过js动态获取分类发生了错误:'+e.message);
+             }
+         }else {
+             let p = homeObj.class_parse.split(';');
+             let p0 = p[0];
+             let _ps = parseTags.getParse(p0);
+             let is_json = p0.startsWith('json:');
+             _pdfa = _ps.pdfa;
+             _pdfh = _ps.pdfh;
+             _pd = _ps.pd;
+             MY_URL = rule.url;
+             if(is_json){
+                 try {
+                     let cms_cate_url = homeObj.MY_URL.replace('ac=detail','ac=list');
+                     let html = getHtml(cms_cate_url);
+                     if (html) {
+                         if(cms_cate_url === homeObj.MY_URL){
+                            homeHtmlCache = html;
+                         }
+                         let list = _pdfa(html, p0.replace('json:',''));
+                         if (list && list.length > 0) {
+                             classes = list;
+                         }
+                     }
+                 } catch (e) {
+                     console.log(e.message);
+                 }
+             } else if(p.length >= 3 && !is_json) { // 可以不写正则
+                 try {
+                     let html = getHtml(homeObj.MY_URL);
+                     if (html) {
+                         homeHtmlCache = html;
+                         let list = _pdfa(html, p0);
+                         if (list && list.length > 0) {
+                             list.forEach((it, idex) => {
+                                 try {
+                                     let name = _pdfh(it, p[1]);
+                                     if (homeObj.cate_exclude && (new RegExp(homeObj.cate_exclude).test(name))) {
+                                         return;
+                                     }
+                                     // let url = pdfh(it, p[2]);
+                                     let url = _pd(it, p[2]);
+                                     if (p.length > 3 && p[3]) {
+                                         let exp = new RegExp(p[3]);
+                                         url = url.match(exp)[1];
+                                     }
 
-                                classes.push({
-                                    'type_id': url.trim(),
-                                    'type_name': name.trim()
-                                });
-                            } catch (e) {
-                                console.log(`分类列表定位第${idex}个元素正常报错:${e.message}`);
-                            }
-                        });
-                    }
-                }
-            } catch (e) {
-                console.log(e.message);
-            }
+                                     classes.push({
+                                         'type_id': url.trim(),
+                                         'type_name': name.trim()
+                                     });
+                                 } catch (e) {
+                                     console.log(`分类列表定位第${idex}个元素正常报错:${e.message}`);
+                                 }
+                             });
+                         }
+                     }
+                 } catch (e) {
+                     console.log(e.message);
+                 }
 
-        }
+             }
+         }
     }
     // 排除分类
     classes = classes.filter(it=>!homeObj.cate_exclude || !(new RegExp(homeObj.cate_exclude).test(it.type_name)));
@@ -1162,7 +1459,7 @@ function homeVodParse(homeVodObj){
     if(p.startsWith('js:')){
         const TYPE = 'home';
         var input = MY_URL;
-        const HOST = rule.host;
+        HOST = rule.host;
         eval(p.replace('js:',''));
         d = VODS;
     }else {
@@ -1304,6 +1601,15 @@ function homeVodParse(homeVodObj){
     let t2 = (new Date()).getTime();
     console.log('加载首页推荐耗时:'+(t2-t1)+'毫秒');
     // console.log(JSON.stringify(d));
+    if(rule.图片替换 && rule.图片替换.includes('=>')){
+        let replace_from = rule.图片替换.split('=>')[0];
+        let replace_to = rule.图片替换.split('=>')[1];
+        d.forEach(it=>{
+            if(it.vod_pic&&it.vod_pic.startsWith('http')){
+                it.vod_pic = it.vod_pic.replace(replace_from,replace_to);
+            }
+        });
+    }
     if(rule.图片来源){
         d.forEach(it=>{
             if(it.vod_pic&&it.vod_pic.startsWith('http')){
@@ -1439,6 +1745,15 @@ function categoryParse(cateObj) {
             console.log(e.message);
         }
     }
+    if(rule.图片替换 && rule.图片替换.includes('=>')){
+        let replace_from = rule.图片替换.split('=>')[0];
+        let replace_to = rule.图片替换.split('=>')[1];
+        d.forEach(it=>{
+            if(it.vod_pic&&it.vod_pic.startsWith('http')){
+                it.vod_pic = it.vod_pic.replace(replace_from,replace_to);
+            }
+        });
+    }
     if(rule.图片来源){
         d.forEach(it=>{
             if(it.vod_pic&&it.vod_pic.startsWith('http')){
@@ -1487,7 +1802,27 @@ function searchParse(searchObj) {
     }
     p = p.trim();
     let pp = rule.一级.split(';');
-    let url = searchObj.searchUrl.replaceAll('**', searchObj.wd).replaceAll('fypage', searchObj.pg);
+    let url = searchObj.searchUrl.replaceAll('**', searchObj.wd);
+    if(searchObj.pg === 1 && url.includes('[')&&url.includes(']')&&!url.includes('#')){
+        url = url.split('[')[1].split(']')[0];
+    }else if(searchObj.pg > 1 && url.includes('[')&&url.includes(']')&&!url.includes('#')){
+        url = url.split('[')[0];
+    }
+
+    if(/fypage/.test(url)){
+        if(url.includes('(')&&url.includes(')')){
+            let url_rep = url.match(/.*?\((.*)\)/)[1];
+            // console.log(url_rep);
+            let cnt_page = url_rep.replaceAll('fypage', searchObj.pg);
+            // console.log(cnt_page);
+            let cnt_pg = eval(cnt_page);
+            // console.log(cnt_pg);
+            url = url.replaceAll(url_rep,cnt_pg).replaceAll('(','').replaceAll(')','');
+        }else{
+            url = url.replaceAll('fypage',searchObj.pg);
+        }
+    }
+
     MY_URL = url;
     console.log(MY_URL);
     // log(searchObj.搜索);
@@ -1610,6 +1945,15 @@ function searchParse(searchObj) {
             print('搜索发生错误:'+e.message);
             return '{}'
         }
+    }
+    if(rule.图片替换 && rule.图片替换.includes('=>')){
+        let replace_from = rule.图片替换.split('=>')[0];
+        let replace_to = rule.图片替换.split('=>')[1];
+        d.forEach(it=>{
+            if(it.vod_pic&&it.vod_pic.startsWith('http')){
+                it.vod_pic = it.vod_pic.replace(replace_from,replace_to);
+            }
+        });
     }
     if(rule.图片来源){
         d.forEach(it=>{
@@ -1776,6 +2120,9 @@ function detailParse(detailObj){
                 let new_map = {};
                 for(let v of vHeader){
                     let v_title = _pdfh(v,tab_text).trim();
+                    if(!v_title){
+                        v_title = '线路空'
+                    }
                     console.log(v_title);
                     if(tab_exclude&& (new RegExp(tab_exclude)).test(v_title)){
                         continue;
@@ -1868,6 +2215,11 @@ function detailParse(detailObj){
         }
         vod.vod_play_url = vod_play_url;
     }
+    if(rule.图片替换 && rule.图片替换.includes('=>')){
+        let replace_from = rule.图片替换.split('=>')[0];
+        let replace_to = rule.图片替换.split('=>')[1];
+        vod.vod_pic = vod.vod_pic.replace(replace_from,replace_to);
+    }
     if(rule.图片来源 && vod.vod_pic && vod.vod_pic.startsWith('http')){
         vod.vod_pic = vod.vod_pic + rule.图片来源;
     }
@@ -1877,9 +2229,73 @@ function detailParse(detailObj){
     let t2 = (new Date()).getTime();
     console.log(`加载二级界面${MY_URL}耗时:${t2-t1}毫秒`);
     // print(vod);
+    vod = vodDeal(vod);
+    // print(vod);
     return JSON.stringify({
         list: [vod]
     })
+}
+
+/**
+ * 获取二级待返回的播放线路没处理时的索引关系
+ * @param vod
+ * @returns {{}}
+ */
+function get_tab_index(vod){
+    let obj = {};
+    vod.vod_play_from.split('$$$').forEach((it,index)=>{
+        obj[it] = index;
+    });
+    return obj
+}
+
+/**
+ * 处理待返回的vod数据|线路去除,排序,重命名
+ * @param vod
+ * @returns {*}
+ */
+function vodDeal(vod){
+    let vod_play_from = vod.vod_play_from.split('$$$');
+    let vod_play_url = vod.vod_play_url.split('$$$');
+
+    // 移除指定线路后的列表
+    let tab_removed_list = vod_play_from;
+    // 排序后的线路列表
+    let tab_ordered_list = vod_play_from;
+    // 线路重命名后的列表
+    let tab_renamed_list = vod_play_from;
+    // 定义实际要返回线路
+    let tab_list = vod_play_from;
+    // 选集列表根据线路排序
+    let play_ordered_list = vod_play_url;
+
+    // 判断有移除线路或者线路排序
+    if((rule.tab_remove&&rule.tab_remove.length>0)||(rule.tab_order&&rule.tab_order.length>0)){
+        // 获取原来线路的索引下标
+        let tab_index_dict = get_tab_index(vod);
+
+        if(rule.tab_remove&&rule.tab_remove.length>0){
+            tab_removed_list = vod_play_from.filter(it=>!rule.tab_remove.includes(it));
+            tab_list = tab_removed_list;
+        }
+
+        if(rule.tab_order&&rule.tab_order.length>0){
+            let tab_order = rule.tab_order;
+            tab_ordered_list = tab_removed_list.sort((a, b) => {
+            return (tab_order.indexOf(a)===-1?9999:tab_order.indexOf(a)) - (tab_order.indexOf(b)===-1?9999:tab_order.indexOf(b))
+            });
+            tab_list = tab_ordered_list;
+        }
+        play_ordered_list = tab_list.map(it=>vod_play_url[tab_index_dict[it]]);
+    }
+
+    if(rule.tab_rename&&typeof(rule.tab_rename)==='object'&Object.keys(rule.tab_rename).length>0){
+        tab_renamed_list = tab_list.map(it=>rule.tab_rename[it]||it);
+        tab_list = tab_renamed_list;
+    }
+    vod.vod_play_from = tab_list.join('$$$');
+    vod.vod_play_url = play_ordered_list.join('$$$');
+    return vod
 }
 
 /**
@@ -1903,6 +2319,7 @@ function tellIsJx(url){
 function playParse(playObj){
     fetch_params = JSON.parse(JSON.stringify(rule_fetch_params));
     MY_URL = playObj.url;
+    var MY_FLAG = playObj.flag;
     if(!/http/.test(MY_URL)){
         try {
             MY_URL = base64Decode(MY_URL);
@@ -1910,9 +2327,11 @@ function playParse(playObj){
     }
     MY_URL = decodeURIComponent(MY_URL);
     var input = MY_URL;//注入给免嗅js
+    var flag = MY_FLAG;//注入播放线路名称给免嗅js
     let common_play = {
         parse:1,
         url:input,
+        flag:flag,
         // url:urlencode(input),
         jx:tellIsJx(input)
     };
@@ -1969,6 +2388,56 @@ function playParse(playObj){
 }
 
 /**
+ * 本地代理解析规则
+ * @param params
+ */
+function proxyParse(proxyObj){
+    var input = proxyObj.params;
+    if(proxyObj.proxy_rule){
+        log('准备执行本地代理规则:\n'+proxyObj.proxy_rule);
+        try {
+            eval(proxyObj.proxy_rule);
+            if(input && input!== proxyObj.params && Array.isArray(input) &&input.length===3){
+                return input
+            }else{
+                return [404,'text/plain','Not Found']
+            }
+        }catch (e) {
+            return [500,'text/plain','代理规则错误:'+e.message]
+        }
+
+    }else{
+        return [404,'text/plain','Not Found']
+    }
+}
+
+/**
+ * 辅助嗅探解析规则
+ * @param isVideoObj
+ * @returns {boolean}
+ */
+function isVideoParse(isVideoObj){
+    var input = isVideoObj.url;
+    if(!isVideoObj.t){ // t为假代表默认传的正则字符串
+        let re_matcher =  new RegExp(isVideoObj.isVideo,'i');  // /g匹配多个,/i不区分大小写,/m匹配多行
+        return re_matcher.test(input);
+    }else{
+        // 执行js
+        try {
+            eval(isVideoObj.isVideo);
+            if(typeof(input)==='boolean'){
+                return input
+            }else{
+                return false
+            }
+        }catch (e) {
+            log('执行嗅探规则发生错误:'+e.message);
+            return false
+        }
+    }
+}
+
+/**
  * js源预处理特定返回对象中的函数
  * @param ext
  */
@@ -2012,12 +2481,23 @@ function init(ext) {
         rule.cate_exclude = rule_cate_excludes.join('|');
         rule.tab_exclude = rule_tab_excludes.join('|');
         rule.host = (rule.host||'').rstrip('/');
+        HOST = rule.host;
+        if(rule.hostJs){
+            console.log(`检测到hostJs,准备执行...`);
+            try {
+                eval(rule.hostJs);
+                rule.host = HOST.rstrip('/');
+            }catch (e) {
+                console.log(`执行${rule.hostJs}获取host发生错误:`+e.message);
+            }
+        }
         rule.url = rule.url||'';
         rule.double = rule.double||false;
         rule.homeUrl = rule.homeUrl||'';
         rule.detailUrl = rule.detailUrl||'';
         rule.searchUrl = rule.searchUrl||'';
         rule.homeUrl = rule.host&&rule.homeUrl?urljoin(rule.host,rule.homeUrl):(rule.homeUrl||rule.host);
+        rule.homeUrl = cheerio.jinja2(rule.homeUrl,{rule:rule});
         rule.detailUrl = rule.host&&rule.detailUrl?urljoin(rule.host,rule.detailUrl):rule.detailUrl;
         rule.二级访问前 = rule.二级访问前||'';
         if(rule.url.includes('[')&&rule.url.includes(']')){
@@ -2027,14 +2507,31 @@ function init(ext) {
         }else{
             rule.url = rule.host && rule.url ? urljoin(rule.host,rule.url) : rule.url;
         }
-        rule.searchUrl = rule.host && rule.searchUrl ? urljoin(rule.host,rule.searchUrl) : rule.searchUrl;
+        if(rule.searchUrl.includes('[')&&rule.searchUrl.includes(']')&&!rule.searchUrl.includes('#')){
+            let u1 = rule.searchUrl.split('[')[0]
+            let u2 = rule.searchUrl.split('[')[1].split(']')[0]
+            rule.searchUrl = rule.host && rule.searchUrl?urljoin(rule.host,u1)+'['+urljoin(rule.host,u2)+']':rule.searchUrl;
+        }else{
+            rule.searchUrl = rule.host && rule.searchUrl ? urljoin(rule.host,rule.searchUrl) : rule.searchUrl;
+        }
 
         rule.timeout = rule.timeout||5000;
         rule.encoding = rule.编码||rule.encoding||'utf-8';
         rule.search_encoding = rule.搜索编码||rule.search_encoding||'';
         rule.图片来源 = rule.图片来源||'';
+        rule.图片替换 = rule.图片替换||'';
         rule.play_json = rule.hasOwnProperty('play_json')?rule.play_json:[];
         rule.pagecount = rule.hasOwnProperty('pagecount')?rule.pagecount:{};
+        rule.proxy_rule = rule.hasOwnProperty('proxy_rule')?rule.proxy_rule:'';
+        rule.sniffer = rule.hasOwnProperty('sniffer')?rule.sniffer:'';
+        rule.sniffer = !!(rule.sniffer && rule.sniffer!=='0' && rule.sniffer!=='false');
+
+        rule.isVideo = rule.hasOwnProperty('isVideo')?rule.isVideo:'';
+
+        rule.tab_remove = rule.hasOwnProperty('tab_remove')?rule.tab_remove:[];
+        rule.tab_order = rule.hasOwnProperty('tab_order')?rule.tab_order:[];
+        rule.tab_rename = rule.hasOwnProperty('tab_rename')?rule.tab_rename:{};
+
         if(rule.headers && typeof(rule.headers) === 'object'){
             try {
                 let header_keys = Object.keys(rule.headers);
@@ -2044,6 +2541,18 @@ function init(ext) {
                         console.log(v);
                         if(['MOBILE_UA','PC_UA','UC_UA','IOS_UA','UA'].includes(v)){
                             rule.headers[k] = eval(v);
+                        }
+                    }else if(k.toLowerCase() === 'cookie'){
+                        let v = rule.headers[k];
+                        if(v && v.startsWith('http')){
+                            console.log(v);
+                            try {
+                                v = fetch(v);
+                                console.log(v);
+                                rule.headers[k] = v;
+                            }catch (e) {
+                                console.log(`从${v}获取cookie发生错误:`+e.message);
+                            }
                         }
                     }
                 }
@@ -2177,7 +2686,7 @@ function play(flag, id, flags) {
  * @param quick 是否来自快速搜索
  * @returns {string}
  */
-function search(wd, quick) {
+function search(wd, quick, pg) {
     if(rule.search_encoding){
         if(rule.search_encoding.toLowerCase()!=='utf-8'){
             // 按搜索编码进行编码
@@ -2192,11 +2701,70 @@ function search(wd, quick) {
         搜索: rule.搜索,
         wd: wd,
         //pg: pg,
-        pg: 1,
+        pg: pg||1,
         quick: quick,
     };
     // console.log(JSON.stringify(searchObj));
     return searchParse(searchObj)
+}
+
+/**
+ * js源本地代理返回的数据列表特定返回对象中的函数
+ * @param params 代理链接参数比如 /proxy?do=js&url=https://wwww.baidu.com => params就是 {do:'js','url':'https://wwww.baidu.com'}
+ * @returns {*}
+ */
+function proxy(params){
+    if(rule.proxy_rule&&rule.proxy_rule.trim()){
+        rule.proxy_rule = rule.proxy_rule.trim();
+    }
+    if(rule.proxy_rule.startsWith('js:')){
+        rule.proxy_rule = rule.proxy_rule.replace('js:','');
+    }
+    let proxyObj = {
+        params:params,
+        proxy_rule:rule.proxy_rule
+    };
+    return proxyParse(proxyObj)
+}
+
+
+/**
+ * 是否启用辅助嗅探功能,启用后可以根据isVideo函数进行手动识别为视频的链接地址。默认为false
+ * @returns {*|boolean|boolean}
+ */
+function sniffer(){
+    let enable_sniffer =  rule.sniffer || false;
+    if(enable_sniffer){
+        // log('准备执行辅助嗅探代理规则:\n'+rule.isVideo);
+        log('开始执行辅助嗅探代理规则...');
+    }
+    return enable_sniffer
+}
+
+/**
+ * 启用辅助嗅探功能后根据次函数返回的值识别地址是否为视频，返回true/false
+ * @param url
+ */
+function isVideo(url){
+    let t = 0;
+    let is_video;
+    if(rule.isVideo &&rule.isVideo.trim()){
+        is_video = rule.isVideo.trim();
+    }
+    if(is_video.startsWith('js:')){
+        is_video = is_video.replace('js:','');
+        t = 1;
+    }
+    let isVideoObj = {
+        url:url,
+        isVideo:is_video,
+        t:t,
+    };
+    let result = isVideoParse(isVideoObj);
+    if(result){
+        log('成功执行辅助嗅探规则并检测到视频地址:\n'+rule.isVideo);
+    }
+    return result
 }
 
 function DRPY(){//导出函数
@@ -2208,17 +2776,33 @@ function DRPY(){//导出函数
         detail: detail,
         play: play,
         search: search,
+        proxy:proxy,
+        sniffer:sniffer,
+        isVideo:isVideo
     }
 }
 
+/**
+ * 导出函数无法简写成下面的形式:
+
+ export default {
+  ...DRPY,
+  DRPY
+ }
+
+ */
+
 // 导出函数对象
 export default {
-    init: init,
-    home: home,
-    homeVod: homeVod,
-    category: category,
-    detail: detail,
-    play: play,
-    search: search,
-    DRPY:DRPY
+    init,
+    home,
+    homeVod,
+    category,
+    detail,
+    play,
+    search,
+    proxy,
+    sniffer,
+    isVideo,
+    DRPY,
 }
